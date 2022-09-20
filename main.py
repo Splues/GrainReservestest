@@ -13,9 +13,9 @@ from HTMLTestRunner import HTMLTestRunner
 if __name__ == '__main__':
     #创建测试套件
     suit = unittest.TestSuite()
-    #suit.addTest(Testcase.TestCalculator("test_case_1"))
+    suit.addTest(Testcase.TestCalculator("test_case_1"))
     #suit.addTest(Testcase.TestCalculator("test_case_2"))
-    suit.addTest(Testcase.TestCalculator("test_case_3"))
+    #suit.addTest(Testcase.TestCalculator("test_case_3"))
 
 
 

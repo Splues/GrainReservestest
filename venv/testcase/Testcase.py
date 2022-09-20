@@ -1,45 +1,40 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
 from PageObject import Testelement
 import Calculator
 import time
 import unittest
-
-
-
-#设置10s隐式等待
-#driver.implicitly_wait(10)
 
 #测试用例
 class TestCalculator(unittest.TestCase):
     def setUp(self):
         print("测试开始")
 
+        #测试类实例化
+
     def tearDown(self):
         print("测试结束")
 
     @classmethod
     def setUpClass(cls):
+        """测试准备，传入浏览器驱动"""
         cls.driver = webdriver.Chrome()
 
-    def baidu(self,key):
-        """登录封装"""
-        driver.get(key)
 
     def test_case_1(self):
         """百度搜索测试"""
-        self.baidu("https://www.baidu.com/")
-        driver.find_element(By.ID, "kw").send_keys("测试")
-        driver.find_element(By.ID, "su").send_keys(Keys.ENTER)
+        page = Testelement.baidu_page(self.driver)
+        page.open()
+        page.serch("测试")
+        print(page.get_title())
+        self.assertEqual(page.by_xpath("//input[@value = '测试']"),"测试")
 
     def test_case_2(self):
         """百度搜索邮箱"""
-        driver.get("https://www.baidu.com/")
-        driver.find_element(By.ID, "kw").clear()
-        driver.find_element(By.ID, "kw").send_keys("163邮箱")
-        driver.find_element(By.ID, "su").send_keys(Keys.ENTER)
+        page = Testelement.baidu_page(self.driver)
+        page.open()
+        page.serch("邮箱")
+        self.assertEqual(page.get_title(), "邮箱_百度搜索")
 
     def test_case_3(self):
         """测试基础base层"""

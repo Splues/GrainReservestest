@@ -1,5 +1,8 @@
 #PO封装，用于存储测试用例的元素
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+
 
 class Base():
     """基础page层,通用方法"""
@@ -12,6 +15,10 @@ class Base():
             self.driver.get(self.url)
         else :
             self.driver.get(url)
+
+    #获取title
+    def get_title(self):
+        return self.driver.title
 
     #定位方法封装
     def by_id(self,id):
@@ -41,6 +48,11 @@ class Base():
 class baidu_page(Base):
     """业务通用方法"""
     url = "https://www.baidu.com/"
+    def serch(self,serch_key):
+        self.by_id("kw").clear()
+        self.by_id("kw").send_keys(serch_key)
+        self.by_id("su").send_keys(Keys.ENTER)
+
 
 
 
