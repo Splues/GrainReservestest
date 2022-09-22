@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>百度搜索测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2022-09-22 23:23:09</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:06.937877</p>
-<p class='attribute'><strong>Status:</strong> Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2022-09-23 00:19:19</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:05.466381</p>
+<p class='attribute'><strong>Status:</strong> Failure 1</p>
 
 <p class='description'>用例执行情况：</p>
 </div>
@@ -221,22 +221,22 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='failClass'>
     <td>testcase.Testcase.TestCalculator</td>
     <td>1</td>
     <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_case_1: 百度搜索测试</div></td>
+    <td class='failCase'><div class='testcase'>test_case_1: 百度搜索测试</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+        fail</a>
 
     <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
@@ -250,41 +250,10 @@ ft1.1: 测试开始
 测试结束
 Traceback (most recent call last):
   File "F:\PyProjectAll\venv\testcase\Testcase.py", line 30, in test_case_1
-    self.assertEqual(page.by_xpath("//input[@value = '测试']"),"测试")
-  File "F:\PyProjectAll\venv\PageObject\Testelement.py", line 43, in by_xpath
-    return self.driver.find_element(By.XPATH, xpath)
-  File "F:\PyProjectAll\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 855, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-  File "F:\PyProjectAll\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 428, in execute
-    self.error_handler.check_response(response)
-  File "F:\PyProjectAll\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 243, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@value = '测试']"}
-  (Session info: chrome=105.0.5195.127)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x00FC78B3+2193587]
-	Ordinal0 [0x00F60681+1771137]
-	Ordinal0 [0x00E741A8+803240]
-	Ordinal0 [0x00EA24A0+992416]
-	Ordinal0 [0x00EA273B+993083]
-	Ordinal0 [0x00ECF7C2+1177538]
-	Ordinal0 [0x00EBD7F4+1103860]
-	Ordinal0 [0x00ECDAE2+1170146]
-	Ordinal0 [0x00EBD5C6+1103302]
-	Ordinal0 [0x00E977E0+948192]
-	Ordinal0 [0x00E986E6+952038]
-	GetHandleVerifier [0x01270CB2+2738370]
-	GetHandleVerifier [0x012621B8+2678216]
-	GetHandleVerifier [0x010517AA+512954]
-	GetHandleVerifier [0x01050856+509030]
-	Ordinal0 [0x00F6743B+1799227]
-	Ordinal0 [0x00F6BB68+1817448]
-	Ordinal0 [0x00F6BC55+1817685]
-	Ordinal0 [0x00F75230+1856048]
-	BaseThreadInitThunk [0x76B1FA29+25]
-	RtlGetAppContainerNamedObjectPath [0x77A87A7E+286]
-	RtlGetAppContainerNamedObjectPath [0x77A87A4E+238]
+    self.assertEqual(self.driver.title,"测试")
+AssertionError: '百度一下，你就知道' != '测试'
+- 百度一下，你就知道
++ 测试
 
 
 
@@ -299,8 +268,8 @@ Backtrace:
     <td>Total</td>
     <td>1</td>
     <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

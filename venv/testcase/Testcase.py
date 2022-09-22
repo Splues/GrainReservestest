@@ -27,7 +27,7 @@ class TestCalculator(unittest.TestCase):
         page.open()
         page.serch("测试")
         print(page.get_title())
-        self.assertEqual(page.by_xpath("//input[@value = '测试']"),"测试")
+        self.assertEqual(self.driver.title,"测试")
 
     def test_case_2(self):
         """百度搜索邮箱"""
