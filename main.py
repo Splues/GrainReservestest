@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
 
     #模式选择
-    modul = 2
+    modul = 1
 
     #创建测试运行器
     if modul == 1:
